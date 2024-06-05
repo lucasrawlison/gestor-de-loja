@@ -1,0 +1,14 @@
+.product-screen{
+    z-index: 999;
+    position: absolute;
+    display: none;
+    height: 400px;
+    width: 600px;
+    background-color: rgb(230, 230, 230);
+    outline: 1px solid silver;
+}
+
+.product-screen.show{
+    display: flex;
+}
+
