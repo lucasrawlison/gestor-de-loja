@@ -1,3 +1,19 @@
+.product-screen-bg{
+    position: absolute;
+    z-index: 888;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.product-screen-bg.show{
+    display: flex;
+
+}
+
 .product-screen{
     z-index: 999;
     position: absolute;

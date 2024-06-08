@@ -6,6 +6,9 @@ function loadProduct(productId){
     if(!loadingScreen.classList.contains("show")){
         loadingScreen.classList.add("show");
     }
+    var productScreenBg = document.getElementById("productScreenBg");
+
+    productScreenBg.classList.add("show");
         
     console.log("aqui");
     
@@ -18,6 +21,7 @@ function loadProduct(productId){
         .then(function(product){
             var product = product[0];
             var loadingScreen = document.getElementById("loadingScreen");
+            
             loadingScreen.classList.remove("show");
         })
 

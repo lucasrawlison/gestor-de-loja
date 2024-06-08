@@ -9,12 +9,14 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="bg">
+    <div id="productScreenBg" class="product-screen-bg">
         <div class="product-screen show">
-            <div id="loadingScreen" class="loading-screen show">
+            <div id="loadingScreen" class="loading-screen">
                 <div class="loader"></div>
             </div>
         </div>
+    </div>
+    <div class="bg">
         <div class="list-container">
             <div class="list">
                 <div class="list-header">
