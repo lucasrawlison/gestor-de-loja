@@ -18,19 +18,17 @@
     font-family: sans-serif;
     z-index: 999;
     position: absolute;
-    display: none;
     height: 400px;
     width: 600px;
     background-color: rgb(230, 230, 230);
     outline: 1px solid silver;
     box-sizing: border-box;
     padding: 50px;
-}
-
-.product-screen.show{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
 }
 
 .container{
@@ -101,4 +99,44 @@
 
     }
     
+    
+}
+    
+#closeButton{
+    position: absolute;
+    top: 1px;
+    right: 2px;
+    cursor: pointer;
+}
+
+#saveButton{
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 80px;
+    outline: 1px solid rgb(0 149 255);
+    color: rgb(0 149 255);
+    font-weight: bold;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+#saveButton:hover{
+    background-color: rgb(0 149 255);
+    color: white;
+}
+
+#productId{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    cursor: pointer;
+    font-size:10px;
+    color: rgb(145, 145, 145);
 }

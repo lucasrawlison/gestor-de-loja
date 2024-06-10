@@ -21,7 +21,44 @@ function loadProduct(productId){
         .then(function(product){
             var product = product[0];
             var loadingScreen = document.getElementById("loadingScreen");
+            var productTitle = document.getElementById("productTitle");
+            var productId = document.getElementById("productId");
+            var productDepartamento = document.getElementById("productDepartamento");
+            var productTipo = document.getElementById("productTipo");
+            var productSexo = document.getElementById("productSexo");
             
+            
+
+
+
+
+
+
+
+
+
+
+
+
+            productSexo.innerHTML =
+            `
+            <option value="${product.sexo}">${product.sexo}</option>`;
+
+            productTipo.innerHTML = 
+            `
+            <option value="${product.tipo}">${product.tipo}</option>
+            `;
+
+            productDepartamento.innerHTML = 
+            `
+            <option value="${product.departamento}">${product.departamento}</option>
+            `;
+
+            productId.textContent = `Product ID: #${product.id}`;
+            productTitle.value = product.titulo;
+
+
+
             loadingScreen.classList.remove("show");
         })
 

@@ -4,6 +4,9 @@
     justify-content:center;
     height: 100%;
     width: 100%;
+    background-color: rgb(230, 230, 230);
+    position: absolute;
+    transform: translateX(-50px) translateY(-50px);
 
 }
 

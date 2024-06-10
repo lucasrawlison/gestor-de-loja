@@ -19,6 +19,7 @@ fetch("scripts/getProducts.php", {method:"POST", headers: {'Content-type':'appli
             list.innerHTML += 
             `
             <div class="list-row" ondblclick="loadProduct(${product.id});">
+            <div class="row-container"><span>${product.id}</span></div>
             <div class="row-container"><span>${product.titulo}</span></div>
             <div class="row-container"><span>${product.departamento}</span></div>
             <div class="row-container"><span>${product.tipo}</span></div>
