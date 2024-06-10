@@ -26,8 +26,9 @@ function loadProduct(productId){
             var productDepartamento = document.getElementById("productDepartamento");
             var productTipo = document.getElementById("productTipo");
             var productSexo = document.getElementById("productSexo");
+            var saveButtonContainer = document.getElementById("saveButtonContainer");
+
             
-            
 
 
 
@@ -38,7 +39,7 @@ function loadProduct(productId){
 
 
 
-
+            saveButtonContainer.innerHTML = `<div id="saveButton" onclik="saveProduct(${product.id})">SALVAR</div>`
 
             productSexo.innerHTML =
             `
