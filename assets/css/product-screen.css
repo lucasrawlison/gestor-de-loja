@@ -26,7 +26,7 @@
     padding: 50px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 13px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
     border-radius: 4px;
 }
@@ -55,8 +55,16 @@
         
     }
 
+    .input-design{
+        border: none;
+        height: 25px;
+        border-radius: 4px;
+        box-shadow: 1px 1px 1px #c7c7c7;
+    }
+
     input{
         width: 100%;
+        ;
     }
     input:focus{
         outline: none;
@@ -64,6 +72,10 @@
 
     select{
         width: 100%;
+        border: none;
+        height: 28px;
+        border-radius: 4px;
+        box-shadow: 1px 1px 1px #c7c7c7;
     }
 
     .number{

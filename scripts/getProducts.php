@@ -9,6 +9,7 @@ $query = $data['query'];
 $response = $connect->query($query);
 $i=0;
 
+
 while($product = $response->fetch_assoc()){
     $products[$i] = $product;
     $i++;

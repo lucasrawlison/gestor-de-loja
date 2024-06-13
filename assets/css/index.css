@@ -18,6 +18,16 @@ body{
 
 }
 
+.simple-container{
+    width: 80%;
+    /* min-height: 300px; */
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: end;
+}
+
 .list-container{
     width: 80%;
     /* min-height: 300px; */
@@ -77,3 +87,42 @@ body{
 }
 
 
+#registerButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    color:rgb(0, 185, 62);
+    border: 2px solid rgb(0, 185, 62);
+    font-size: 12px;
+    font-family: sans-serif;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    text-wrap: nowrap;
+    gap: 10px;
+}
+
+#registerButton:hover{
+    color:rgb(255, 255, 255);
+    background-color:rgb(0, 185, 62);
+    border: 2px solid rgb(0, 185, 62);
+}
+
+.no-select{
+    user-select: none;
+}
+
+#refreshButton{
+    font-family: sans-serif;
+    font-size: 12px;
+    color: grey;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    cursor: pointer;
+}

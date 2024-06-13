@@ -1,4 +1,43 @@
 function loadProduct(productId){
+    if(!productId){
+        console.log("sem id");
+        var productScreenBg = document.getElementById("productScreenBg");
+        productScreenBg.classList.add("show");
+        var loadingScreen = document.getElementById("loadingScreen");
+
+        var productTitle = document.getElementById("productTitle");
+        var idDesc = document.getElementById("productId");
+        var productDepartamento = document.getElementById("productDepartamento");
+        var productTipo = document.getElementById("productTipo");
+        var productSexo = document.getElementById("productSexo");
+        var saveButtonContainer = document.getElementById("saveButtonContainer");
+
+        productTitle.value = "";
+        productDepartamento.innerHTML = `
+        <option value="">--Selecione--</option>
+        <option value="Roupa">Roupa</option>
+        <option value="Calçado">Calçado</option>
+        `;
+        productTipo.innerHTML = `
+        <option value="">--Selecione--</option>
+        <option value="Regata">Regata</option>
+        <option value="Camisa">Camisa</option>
+        `;
+        productSexo.innerHTML = `
+        <option value="">--Selecione--</option>
+        <option value="">Masculino</option>
+        <option value="">Feminino</option>
+        `;
+
+          saveButtonContainer.innerHTML = `<div id="saveButton" onclick="saveProduct();">SALVAR</div>`
+
+
+        idDesc.textContent = "# Novo Produto"
+        loadingScreen.classList.remove("show");
+    }else{
+    
+    
+    
     data = {
         "query": `SELECT * FROM products WHERE id='${productId}' ORDER BY id`
     }
@@ -39,7 +78,7 @@ function loadProduct(productId){
 
 
 
-            saveButtonContainer.innerHTML = `<div id="saveButton" onclik="saveProduct(${product.id})">SALVAR</div>`
+            saveButtonContainer.innerHTML = `<div id="saveButton" onclick="saveProduct(${product.id})">SALVAR</div>`
 
             productSexo.innerHTML =
             `
@@ -63,5 +102,5 @@ function loadProduct(productId){
             loadingScreen.classList.remove("show");
         })
 
-
+    }
 }
