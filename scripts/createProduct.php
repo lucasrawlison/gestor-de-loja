@@ -13,7 +13,7 @@ if($connect->query($query)){
     $response['status'] = 0;
 }
 
-$queryReturn = "SELECT * FROM products ORDER BY id";
+$queryReturn = "SELECT * FROM products ORDER BY id DESC";
 $return = $connect->query($queryReturn);
 $product = $return->fetch_assoc();
 $response["id"] = $product["id"];

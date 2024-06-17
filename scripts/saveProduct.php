@@ -5,7 +5,7 @@ $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 // $data['query'] = "SELECT * FROM products ORDER BY id";
 
-$query = "UPDATE products SET titulo='$data[titulo]', tipo='$data[tipo]', departamento='$data[departamento]', sexo='$data[sexo]' WHERE id='$data[id]'";
+$query = "UPDATE products SET titulo='$data[titulo]', tipo='$data[tipo]', departamento='$data[departamento]', sexo='$data[sexo]', valor='$data[valor]', valor_anterior='$data[valorAnterior]' WHERE id='$data[id]'";
 
 if($connect->query($query)){
     $response = 1;

@@ -1,0 +1,42 @@
+.pictures-display{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.pictures-container{
+    justify-content: center;
+    overflow: hidden;
+    display: flex;
+    height: 115px;
+    width: 115px;
+    background-color: aliceblue;
+    border-radius: 4px;
+    border: 1px solid silver;
+    cursor: pointer;
+}
+
+.pictures-container:hover{
+    border: 1px solid rgb(129, 129, 129);
+}   
+
+.add-picture{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 115px;
+    width: 115px;
+    border-radius: 4px;
+    border: 2px dashed rgba(3, 224, 3, 0.500);
+    cursor: pointer;
+    color: rgba(3, 224, 3, 0.500);
+    transition-duration: 0.1    s;
+}
+
+.add-picture:hover{
+    border: 2px dashed rgb(3, 224, 3);
+    color: rgb(3, 224, 3);
+
+}

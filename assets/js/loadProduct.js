@@ -10,8 +10,12 @@ function loadProduct(productId){
         var productDepartamento = document.getElementById("productDepartamento");
         var productTipo = document.getElementById("productTipo");
         var productSexo = document.getElementById("productSexo");
+        var productValue = document.getElementById("productValue");
+        var productPreviousValue = document.getElementById("productPreviousValue");
         var saveButtonContainer = document.getElementById("saveButtonContainer");
 
+        productValue.value = "R$ 0,00";
+        productPreviousValue.value = "R$ 0,00";
         productTitle.value = "";
         productDepartamento.innerHTML = `
         <option value="">--Selecione--</option>
@@ -66,7 +70,8 @@ function loadProduct(productId){
             var productTipo = document.getElementById("productTipo");
             var productSexo = document.getElementById("productSexo");
             var saveButtonContainer = document.getElementById("saveButtonContainer");
-
+            var productValue = document.getElementById("productValue");
+            var productPreviousValue = document.getElementById("productPreviousValue");
             
 
 
@@ -96,11 +101,20 @@ function loadProduct(productId){
 
             productId.textContent = `Product ID: #${product.id}`;
             productTitle.value = product.titulo;
-
-
+            productValue.value = convertNumber(product.valor); 
+            productPreviousValue.value = convertNumber(product.valor_anterior);
+            
 
             loadingScreen.classList.remove("show");
         })
 
     }
+}
+
+function convertNumber (number){
+    
+    number = Number(number).toFixed(2);
+    number = "R$ " + number.slice(0, -3) + "," + number.slice(-2);
+    return number;
+
 }

@@ -23,7 +23,7 @@ fetch("scripts/getProducts.php", {method:"POST", headers: {'Content-type':'appli
             <div class="row-container"><span>${product.titulo}</span></div>
             <div class="row-container"><span>${product.departamento}</span></div>
             <div class="row-container"><span>${product.tipo}</span></div>
-            <div class="row-container"><span>${product.valor}</span></div>
+            <div class="row-container"><span>${convertNumber(product.valor)}</span></div>
             </div>
             `
         });

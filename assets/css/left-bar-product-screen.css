@@ -1,0 +1,33 @@
+.left-bar-product-screen{
+    height: 300px;
+    width: 120px;
+    /* background-color: white; */
+
+
+}
+
+.screen-option{
+    display: flex;
+    background-color: rgb(209, 209, 209);
+    font-family: sans-serif;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(145, 145, 145);
+    width: 100%;
+    height: 30px;
+    border-radius: 3px;
+    cursor: pointer;
+
+    span{
+        color: black;
+        text-align: center;
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+}
+
+.screen-option:hover{
+    background-color: rgb(197, 197, 197);
+}   

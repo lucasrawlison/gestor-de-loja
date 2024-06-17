@@ -1,0 +1,9 @@
+.moneyValueInput{
+    max-width: 190px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px 0 rgb(0, 0, 0, 0.2);
+    outline: none;
+    color: dimgray;
+}
