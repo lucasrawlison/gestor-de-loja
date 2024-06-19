@@ -43,7 +43,8 @@ function loadProduct(productId){
     
     
     data = {
-        "query": `SELECT * FROM products WHERE id='${productId}' ORDER BY id`
+        "query": `SELECT * FROM products WHERE id='${productId}' ORDER BY id`,
+        "img": 1
     }
     var loadingScreen = document.getElementById("loadingScreen");
     if(!loadingScreen.classList.contains("show")){
@@ -62,7 +63,7 @@ function loadProduct(productId){
         })
 
         .then(function(product){
-            var product = product[0];
+
             var loadingScreen = document.getElementById("loadingScreen");
             var productTitle = document.getElementById("productTitle");
             var productId = document.getElementById("productId");
@@ -72,33 +73,71 @@ function loadProduct(productId){
             var saveButtonContainer = document.getElementById("saveButtonContainer");
             var productValue = document.getElementById("productValue");
             var productPreviousValue = document.getElementById("productPreviousValue");
+            var productPreviousValue = document.getElementById("productPreviousValue");
+            var picturesDisplay = document.getElementById("picturesDisplay");
             
 
 
 
-
-
-
-
-
-
-
+            
+            
+            
+            
+            
+            
             saveButtonContainer.innerHTML = `<div id="saveButton" onclick="saveProduct(${product.id})">SALVAR</div>`
-
+            
             productSexo.innerHTML =
             `
             <option value="${product.sexo}">${product.sexo}</option>`;
-
+            
             productTipo.innerHTML = 
             `
             <option value="${product.tipo}">${product.tipo}</option>
             `;
-
+            
             productDepartamento.innerHTML = 
             `
             <option value="${product.departamento}">${product.departamento}</option>
             `;
+            
+            picturesDisplay.innerHTML= "";
+            
+            
+            if('image' in product){
+                
+                product.image.forEach(image => {
+                    picturesDisplay.innerHTML += 
+                    `
+                    <div class="pictures-container">
+                        <img src="${image.path}" alt="image_${image.nome}">
+                    </div>
+                    `;
+                });
+    
+                picturesDisplay.innerHTML += 
+                `
+                <div class="add-picture">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+                    </svg>
+                </div>
+                `;
+            }else{
+                picturesDisplay.innerHTML += 
+                `
+                <div class="add-picture">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+                    </svg>
+                </div>
+                `;
+            }
 
+
+
+            
+            
             productId.textContent = `Product ID: #${product.id}`;
             productTitle.value = product.titulo;
             productValue.value = convertNumber(product.valor); 

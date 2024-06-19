@@ -92,7 +92,7 @@
                 </div>
                 </div>
                 <div id="midiaScreen" class="screen">
-                    <div class="pictures-display">
+                    <div id="picturesDisplay" class="pictures-display">
                         <div class="pictures-container">
                             <img src="http://localhost/loja/assets/images/products/1/foto.jpg" alt="">
                         </div>
