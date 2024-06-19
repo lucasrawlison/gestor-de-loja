@@ -30,6 +30,10 @@
 
                 <div id="saveButton">SALVAR</div>
             </div>
+            <div onclick="fileUpload();" id="fileSubmitContainer">
+
+                <div id="fileSubmit">ENVIAR ARQUIVOS</div>
+            </div>
             <div id="loadingScreen" class="loading-screen">
                 <div class="loader"></div>
             </div>
@@ -93,7 +97,7 @@
                 </div>
                 <div id="midiaScreen" class="screen">
                     <div id="picturesDisplay" class="pictures-display">
-                        <div class="pictures-container">
+                        <!-- <div class="pictures-container">
                             <img src="http://localhost/loja/assets/images/products/1/foto.jpg" alt="">
                         </div>
                         <div class="pictures-container">
@@ -104,7 +108,15 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
                             </svg>
-                        </div>
+                        </div> -->
+                            <!-- <form class="add-picture" action="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+                                </svg>
+                                <input type="file" name="fileInput" id="fileInput" accept="image/jpg, image/png, image/jpeg" placeholder="">
+                                <button type="submit">Enviar</button>
+                            </form> -->
+                        
                     </div>
 
                 </div>
@@ -157,4 +169,6 @@
 <script src="assets/js/inputAnimation.js"></script>
 <script src="assets/js/convertValue.js"></script>
 <script src="assets/js/productOptionSelect.js"></script>
+<script src="assets/js/fileReader.js"></script>
+<script src="assets/js/fileUpload.js"></script>
 </html>

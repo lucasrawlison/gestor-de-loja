@@ -27,7 +27,14 @@ fetch("scripts/getProducts.php", {method:"POST", headers: {'Content-type':'appli
             </div>
             `
         });
+        
     })
+
+    .catch(error => {
+        console.log(error);
+        alert('Falha na leitura dos produtos')
+    });
+
 
 }
 
