@@ -2,17 +2,15 @@ function fileUpload(){
     var files = fileAdd();
     console.log(files);
     var qtd = files.length;
-    var cont = 0;
     var formData = new FormData();
 
     
     files.forEach(file => {
         formData.append('images[]', file);
-        cont++
     });
     
-    formData.append('length[]', qtd);
-    console.log(formData);
+    formData.append('length', qtd);
+    console.log([...formData.entries()]);
 
     fetch("scripts/fileUpload.php", {method: "POST", body: formData})
         .then(function(response){
