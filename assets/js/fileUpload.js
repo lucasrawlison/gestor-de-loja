@@ -1,4 +1,6 @@
 function fileUpload(){
+    var fileSubmitContainer = document.getElementById("fileSubmitContainer");
+    var productId = fileSubmitContainer.getAttribute("productId");
     var files = fileAdd();
     console.log(files);
     var qtd = files.length;
@@ -10,6 +12,7 @@ function fileUpload(){
     });
     
     formData.append('length', qtd);
+    formData.append('productId', productId);
     console.log([...formData.entries()]);
 
     fetch("scripts/fileUpload.php", {method: "POST", body: formData})
@@ -19,22 +22,27 @@ function fileUpload(){
         
         .then(function(data){
             console.log(data);
+            loadProduct(productId);
         })
 
 }
 
-i=0;
+
 var files = [];
 
 function fileAdd(file){
     if(typeof file !== "undefined"){
-        files[i] = file;
+        files.push(file);
         console.log(files);
-        i++
         return files;
         
     }else{
         return files;
     }
+}
+
+function unsetFiles(){
+    files =  [];
+    console.log(files);
 }
 

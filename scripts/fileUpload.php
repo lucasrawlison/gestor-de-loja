@@ -1,32 +1,53 @@
 <?php
-
+include("dbConnect.php");
 if($_SERVER['REQUEST_METHOD'] == "POST"){
-    // echo "<pre>";
-    // print_r($_POST);
-    // print_r($_FILES);
-    // echo "</pre>";
-    // echo $_FILES["length"];
+    $productId = $_POST["productId"];
 
-    $cont = 0;
-    foreach ($_FILES["images"]["name"] as $name) {
-        $cont++;
+// conta qtd arquivos
+    $length = count($_FILES["images"]["name"]);
+    // echo $length;
+
+
+    $uploadDir = "../uploads/products_images/" . $productId . "/"; //seta o diretório de upload
+    $dir = "uploads/products_images/" . $productId . "/"; //localização do diretório para inserir no banco de dados
+
+// checa a existência do diretório
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0777, true); //cria o diretório caso não exista
     }
-    echo $cont;
+
+// ----------------------
+
+    
+    for ($i=0; $i < $length; $i++) { 
+        // echo json_encode($_FILES["images"]["tmp_name"][$i]);
+        $fileName = $_FILES["images"]["name"][$i]; //captura o nome do arquivo no array
+
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION); //pega o nome do arquivo e separa apenas a extensão
+
+        $newFileName = uniqid() . "." . $fileType; //cria um novo nome aleatório para o arquivo
+
+        $target = $uploadDir . $newFileName; //define o local de salvar o arquivo
+
+
+        if(move_uploaded_file($_FILES["images"]["tmp_name"][$i], $target)){  // executa e testa se o upload deu certo
+            $path = "https://hardteste-sheetonline.shop/" . $dir . $newFileName; //localização onde a imagem será salva, junto com o nome do arquivo
+            $query = "INSERT INTO imagens (bem_id, path, nome) VALUES ('$productId', '$path', '$newFileName')";
+            $return = $connect->query($query);
+
+            $query2 = "UPDATE products SET img=1 WHERE id = '$productId'";
+            $return2 = $connect->query($query2);
+                      
+            
+            
+            echo "Arquivo enviado com sucesso";
+
+        }else{
+            echo "Erro no envio do arquivo";
+        }
+    }
     
 
-    if(isset($_FILES["images"])){
-        // echo json_encode($_FILES);
-        $images = $_FILES["images"];
-        $nameCont = count($images);
-        
-        echo json_decode($_FILES["length"]);
-        echo json_encode($images["name"][0]);
-        
-
-
-        // echo json_encode($_FILES["images"]["name"][0]);
-    }
 }
-
 
 ?>

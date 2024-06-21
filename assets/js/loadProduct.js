@@ -35,9 +35,9 @@ function loadProduct(productId){
 
           saveButtonContainer.innerHTML = `<div id="saveButton" onclick="saveProduct();">SALVAR</div>`
 
-
         idDesc.textContent = "# Novo Produto"
         loadingScreen.classList.remove("show");
+
     }else{
     
     
@@ -75,8 +75,10 @@ function loadProduct(productId){
             var productPreviousValue = document.getElementById("productPreviousValue");
             var productPreviousValue = document.getElementById("productPreviousValue");
             var picturesDisplay = document.getElementById("picturesDisplay");
+            var fileSubmitContainer = document.getElementById("fileSubmitContainer");
+            fileSubmitContainer.setAttribute("productId", product.id);
             
-
+            
 
 
             
@@ -150,6 +152,7 @@ function loadProduct(productId){
             productValue.value = convertNumber(product.valor); 
             productPreviousValue.value = convertNumber(product.valor_anterior);
             
+
             fileReader();
             loadingScreen.classList.remove("show");
 
