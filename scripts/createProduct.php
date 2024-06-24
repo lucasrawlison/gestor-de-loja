@@ -5,7 +5,7 @@ $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 // $data['query'] = "SELECT * FROM products ORDER BY id";
 
-$query = "INSERT INTO products (tipo, titulo, departamento, sexo) VALUES ('$data[tipo]', '$data[titulo]', '$data[departamento]', '$data[sexo]')";
+$query = "INSERT INTO products (tipo, titulo, departamento, sexo, valor) VALUES ('$data[tipo]', '$data[titulo]', '$data[departamento]', '$data[sexo]', '$data[valor]', '$data[valorAnterior]')";
 
 if($connect->query($query)){
     $response['status'] = 1;

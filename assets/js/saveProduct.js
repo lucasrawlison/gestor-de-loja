@@ -4,8 +4,8 @@ function saveProduct(id){
         var departamento = document.getElementById("productDepartamento").value;
         var tipo = document.getElementById("productTipo").value;
         var sexo = document.getElementById("productSexo").value;
-        var productValue = document.getElementById("productValue").value;
-        var productPreviousValue = document.getElementById("productPreviousValue").value;
+        var productValue = convertValue(document.getElementById("productValue").value);
+        var productPreviousValue = convertValue(document.getElementById("productPreviousValue").value);
     
         data = {
             "titulo" : titulo,
