@@ -9,9 +9,26 @@
     <link rel="stylesheet" href="assets/css/inputAnimation.css">
     <link rel="stylesheet" href="assets/css/left-bar-product-screen.css">
     <link rel="stylesheet" href="assets/css/midia-screen.css">
+    <link rel="stylesheet" href="assets/css/deleteProduct.css">
     <title>Document</title>
 </head>
 <body>
+    <div id="deleteProductBg" class="delete-product-bg show">
+        <div class="delete-box">
+            <div class="container">
+                <span id="deleteMsg"></span>
+            </div>
+            <div class="container row">
+                <div class="container">
+                    <button class="choice-button" id="yes">SIM</button>
+                </div>
+                <div class="container">
+                    <button class="choice-button" id="no">NÃO</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="productScreenBg" class="product-screen-bg">
         <div class="left-bar-product-screen">
             <div onclick="optionSelect('cadastro');" class="screen-option">
@@ -151,6 +168,8 @@
                     <div class="row-container"><span>DEPARTAMENTO</span></div>
                     <div class="row-container"><span>TIPO</span></div>
                     <div class="row-container"><span>VALOR</span></div>
+                    <div class="row-container right"><span></span></div>
+
                 </div>
                 <div id="list-body">
                     <!-- <div class="list-row"></div> -->
@@ -171,4 +190,5 @@
 <script src="assets/js/productOptionSelect.js"></script>
 <script src="assets/js/fileReader.js"></script>
 <script src="assets/js/fileUpload.js"></script>
+<script src="assets/js/deleteProduct.js"></script>
 </html>

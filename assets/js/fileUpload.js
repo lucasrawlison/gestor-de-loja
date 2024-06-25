@@ -22,6 +22,7 @@ function fileUpload(){
         
         .then(function(data){
             console.log(data);
+            unsetFiles();
             loadProduct(productId);
         })
 

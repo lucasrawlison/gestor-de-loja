@@ -80,6 +80,11 @@ body{
     display: flex;
 }
 
+.row-container.right{
+    max-width: 30px;
+    
+}
+
 #list-body{
     
     font-family: sans-serif;
@@ -125,4 +130,8 @@ body{
     flex-direction: row;
     gap: 5px;
     cursor: pointer;
+}
+
+.bi-trash{
+    color: red;
 }
