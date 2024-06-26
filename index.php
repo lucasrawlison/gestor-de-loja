@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/left-bar-product-screen.css">
     <link rel="stylesheet" href="assets/css/midia-screen.css">
     <link rel="stylesheet" href="assets/css/deleteProduct.css">
+    <link rel="stylesheet" href="assets/css/loadingBar.css">
     <title>Document</title>
 </head>
 <body>
@@ -170,6 +171,10 @@
                     <div class="row-container"><span>VALOR</span></div>
                     <div class="row-container right"><span></span></div>
 
+                </div>
+                <div id="loadingBarContainer" class="loading-bar-container">
+                    <div class="loading-bar">
+                    </div>
                 </div>
                 <div id="list-body">
                     <!-- <div class="list-row"></div> -->

@@ -9,10 +9,10 @@ $data = json_decode($json, true);
 
 if (isset($data['productId'])){
     $productId = $data['productId'];
-    $query = "SELECT * FROM products WHERE id='$productId' ORDER BY id";
+    $query = "SELECT * FROM products WHERE id='$productId' ORDER BY id DESC";
 }else{
 
-    $query = "SELECT * FROM products WHERE deletado=0 ORDER BY id";
+    $query = "SELECT * FROM products WHERE deletado=0 ORDER BY id DESC";
 }
 
 $response = $connect->query($query);

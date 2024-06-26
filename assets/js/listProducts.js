@@ -1,4 +1,6 @@
 function getProducts(){
+ var loadingBarContainer = document.getElementById("loadingBarContainer");
+ loadingBarContainer.classList.add("show");
 
 fetch("scripts/getProducts.php")
     .then(function(response){
@@ -29,7 +31,10 @@ fetch("scripts/getProducts.php")
             `
         });
         
+        var loadingBarContainer = document.getElementById("loadingBarContainer");
+        loadingBarContainer.classList.remove("show");
     })
+
 
     .catch(error => {
         console.log(error);

@@ -3,5 +3,5 @@ function closeProductWindow(){
     optionSelect("cadastro");
     unsetFiles();
     window.classList.remove("show");
-
+    getProducts();
 }

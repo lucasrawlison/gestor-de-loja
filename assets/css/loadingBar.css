@@ -1,0 +1,35 @@
+.loading-bar-container{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 2px;
+    background-color: white;
+    width: 100%;
+    background: linear-gradient(to right, rgba(28, 111, 219, 0) 0%, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 90%, rgba(28, 111, 219, 0) 100%);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.loading-bar-container.show{
+    display: flex;
+}
+
+.loading-bar{
+    position: absolute;
+    background: linear-gradient(to right, rgba(28, 111, 219, 0) 0%, rgb(16, 120, 255) 30%, rgba(16, 120, 255) 70%, rgba(28, 111, 219, 0) 100%);
+    width: 90%;
+    height: 100%;
+    animation: move 1.8s ease-out infinite;
+}
+
+@keyframes move {
+    0%{
+        left: -50%;
+    }
+
+    100%{
+        left: 100%;
+    }
+}
