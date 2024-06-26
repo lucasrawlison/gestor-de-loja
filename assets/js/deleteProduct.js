@@ -18,15 +18,18 @@ function deleteProduct(productId) {
                 console.log("yes");
                 
                 data ={
-                    "id" : productId
+                    "productId" : productId
                 }
-                fetch("deleteProduct.php", {method: "POST", headers: {'Content-type': 'application/json'}, body: JSON.stringify(data)})
+                fetch("scripts/deleteProduct.php", {method: "POST", headers: {'Content-type': 'application/json'}, body: JSON.stringify(data)})
                     .then(function(response){
                         return response.json();
                     })
             
                     .then(function(data){
                         console.log(data)
+                        var deleteProductBg = document.getElementById("deleteProductBg");
+                        deleteProductBg.classList.remove("show");
+                        getProducts();
                                 
                     })
 
@@ -45,4 +48,3 @@ function deleteProduct(productId) {
 
 
 }
-deleteProduct()

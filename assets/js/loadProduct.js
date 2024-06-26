@@ -40,10 +40,10 @@ function loadProduct(productId){
 
     }else{
     
-    
+    console.log(productId);
     
     data = {
-        "query": `SELECT * FROM products WHERE id='${productId}' ORDER BY id`,
+        "productId" : productId,
         "img": 1
     }
     var loadingScreen = document.getElementById("loadingScreen");

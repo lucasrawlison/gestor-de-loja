@@ -5,7 +5,16 @@ $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 // $data['query'] = "SELECT * FROM products WHERE id = 10 ORDER BY id";
 // $data['img'] = 1;
-$query = $data['query'];
+
+
+if (isset($data['productId'])){
+    $productId = $data['productId'];
+    $query = "SELECT * FROM products WHERE id='$productId' ORDER BY id";
+}else{
+
+    $query = "SELECT * FROM products WHERE deletado=0 ORDER BY id";
+}
+
 $response = $connect->query($query);
 
 

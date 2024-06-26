@@ -1,11 +1,6 @@
 function getProducts(){
 
-
-data = {
-    "query": "SELECT * FROM products ORDER BY id"
-}
-
-fetch("scripts/getProducts.php", {method:"POST", headers: {'Content-type':'application/json'}, body: JSON.stringify(data)})
+fetch("scripts/getProducts.php")
     .then(function(response){
         return response.json();
     })
@@ -14,7 +9,7 @@ fetch("scripts/getProducts.php", {method:"POST", headers: {'Content-type':'appli
         console.log(products);
         
         var list = document.getElementById("list-body");
-        
+        list.innerHTML = "";
         products.forEach(product => {
             list.innerHTML += 
             `
