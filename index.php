@@ -56,7 +56,7 @@
                 <div class="loader"></div>
             </div>
             <div id="cadastroScreen" class="screen show">
-            <div class="option-container">
+            <div class="option-container status">
                     <span>STATUS:</span>
                     <select name="status" id="productStatus">
                     </select>
@@ -149,6 +149,16 @@
 
     
     <div class="bg">
+        <div class="filter-container">
+            <div class="filter-option-container">
+                <span>Teste</span>
+                <input type="text">
+            </div>
+            <div class="filter-option-container">
+                <span>Teste</span>
+                <input type="text">
+            </div>
+        </div>
         <div class="simple-container">
             
             <div onclick="getProducts();" id="refreshButton">
