@@ -8,15 +8,30 @@ function loadProduct(productId){
         var productTitle = document.getElementById("productTitle");
         var idDesc = document.getElementById("productId");
         var productDepartamento = document.getElementById("productDepartamento");
+        var productStatus = document.getElementById("productStatus");
         var productTipo = document.getElementById("productTipo");
         var productSexo = document.getElementById("productSexo");
         var productValue = document.getElementById("productValue");
         var productPreviousValue = document.getElementById("productPreviousValue");
         var saveButtonContainer = document.getElementById("saveButtonContainer");
 
+
+
+
+
         productValue.value = "R$ 0,00";
         productPreviousValue.value = "R$ 0,00";
         productTitle.value = "";
+
+
+        productStatus.innerHTML = 
+        `
+        <option value="">--Selecione--</option>
+        <option value="Disponível">Disponível</option>
+        <option value="Esgotado">Esgotado</option>
+        <option value="Rascunho">Rascunho</option>
+        `;
+
         productDepartamento.innerHTML = `
         <option value="">--Selecione--</option>
         <option value="Roupa">Roupa</option>
@@ -68,6 +83,7 @@ function loadProduct(productId){
             var productTitle = document.getElementById("productTitle");
             var productId = document.getElementById("productId");
             var productDepartamento = document.getElementById("productDepartamento");
+            var productStatus = document.getElementById("productStatus");
             var productTipo = document.getElementById("productTipo");
             var productSexo = document.getElementById("productSexo");
             var saveButtonContainer = document.getElementById("saveButtonContainer");
@@ -88,6 +104,11 @@ function loadProduct(productId){
             
             
             saveButtonContainer.innerHTML = `<div id="saveButton" onclick="saveProduct(${product.id})">SALVAR</div>`
+
+            productStatus.innerHTML = 
+            `
+            <option value="${product.status}">${product.status}</option>
+            `;
             
             productSexo.innerHTML =
             `

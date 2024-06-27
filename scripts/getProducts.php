@@ -42,6 +42,36 @@ else{
 
 }
 
+if (isset($data['productId'])){
+    
+    $depQuery = "SELECT * FROM departamentos ORDER BY id";
+    
+    $depResponse = $connect->query($depQuery);
+    $depCont=0;
+    while($departamento = $depResponse->fetch_assoc()){
+        $departamentos[$depCont] = $departamento;
+        $depCont++;
+        
+    }
+    
+    $products["departamentos"] = $departamentos;
+    
+    
+    
+    $typeQuery = "SELECT * FROM tipos ORDER BY id";
+    
+    $typeResponse = $connect->query($typeQuery);
+    $typeCont=0;
+    while($type = $typeResponse->fetch_assoc()){
+        $types[$typeCont] = $type;
+        $typeCont++;
+    }
+    
+    $products["types"] = $types;
+
+}
+
+
 echo json_encode($products);
 
 

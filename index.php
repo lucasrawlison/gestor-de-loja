@@ -56,6 +56,11 @@
                 <div class="loader"></div>
             </div>
             <div id="cadastroScreen" class="screen show">
+            <div class="option-container">
+                    <span>STATUS:</span>
+                    <select name="status" id="productStatus">
+                    </select>
+                </div>
                 <div class="option-container">
                     <span>TÍTULO:</span>
                     <input class="input-design" id="productTitle" type="text">
@@ -169,6 +174,7 @@
                     <div class="row-container"><span>DEPARTAMENTO</span></div>
                     <div class="row-container"><span>TIPO</span></div>
                     <div class="row-container"><span>VALOR</span></div>
+                    <div class="row-container"><span>STATUS</span></div>
                     <div class="row-container right"><span></span></div>
 
                 </div>
