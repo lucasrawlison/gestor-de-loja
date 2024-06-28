@@ -69,8 +69,8 @@ function loadProduct(productId){
             `;
             productSexo.innerHTML = `
             <option value="">--Selecione--</option>
-            <option value="">Masculino</option>
-            <option value="">Feminino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
             `;
     
               saveButtonContainer.innerHTML = `<div id="saveButton" onclick="saveProduct();">SALVAR</div>`

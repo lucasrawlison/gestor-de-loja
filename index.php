@@ -67,18 +67,18 @@
                 </div>
                 <div class="option-container">
                     <span>DEPARTAMENTO:</span>
-                    <select name="departamento" id="productDepartamento">
+                    <select name="productDepartamento" id="productDepartamento">
                     </select>
                 </div>
                 <div class="option-container">
                     <span>TIPO:</span>
-                    <select name="departamento" id="productTipo">
+                    <select name="productTipo" id="productTipo">
                         
                     </select>
                 </div>
                 <div class="option-container">
                     <span>GÊNERO:</span>
-                    <select name="departamento" id="productSexo">
+                    <select name="productSexo" id="productSexo">
                         
                     </select>
                 </div>
@@ -150,13 +150,31 @@
     
     <div class="bg">
         <div class="filter-container">
-            <div class="filter-option-container">
-                <span>Teste</span>
+            <div class="filter-option-container titulo">
+                <span>Título:</span>
                 <input type="text">
             </div>
             <div class="filter-option-container">
-                <span>Teste</span>
-                <input type="text">
+                <span>Departamento:</span>
+                <select name="departamento" id="filterDepartamento">
+                    <option value="Roupas">Roupas</option>
+                    <option value="Calçados">Calçados</option>
+                    <option value="Acessórios">Acessórios</option>
+                </select>
+            </div>
+            <div class="filter-option-container">
+                <span>Tipo:</span>
+                <select name="tipo" id="filterTipo">
+                    
+                </select>
+            </div>
+            <div class="filter-option-container">
+                <span>Status:</span>
+                <select name="status" id="filterStatus">
+                    <option value="Disponível">Disponível</option>
+                    <option value="Esgotado">Esgotado</option>
+                    <option value="Rascunho">Rascunho</option>
+                </select>
             </div>
         </div>
         <div class="simple-container">

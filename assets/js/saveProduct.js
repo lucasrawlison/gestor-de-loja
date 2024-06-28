@@ -1,5 +1,6 @@
 function saveProduct(id){
     if(!id){
+        var status = document.getElementById("productStatus").value;
         var titulo = document.getElementById("productTitle").value;
         var departamento = document.getElementById("productDepartamento").value;
         var tipo = document.getElementById("productTipo").value;
@@ -8,6 +9,7 @@ function saveProduct(id){
         var productPreviousValue = convertValue(document.getElementById("productPreviousValue").value);
     
         data = {
+            "status" : status,
             "titulo" : titulo,
             "departamento" : departamento,
             "tipo" : tipo,
@@ -23,14 +25,20 @@ function saveProduct(id){
         
         fetch("scripts/createProduct.php", {method:"POST", headers: {'Content-type':'application/json'}, body: JSON.stringify(data)})
         .then(function (response){
+            
             return  response.json();
         })
 
         .then(function (response){
             console.log(response);
             loadProduct(response.id);
-            
         })
+
+        .catch(error => {
+            console.error("erro", error);
+            alert('Falha ao tentar salvar o produto')
+        });
+        
 
     }else{
 
@@ -66,6 +74,7 @@ function saveProduct(id){
 
         .then(function (response){
             loadProduct(id);
+            loadingScreen.classList.remove("show");
         })
     }
 
