@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION['lastQuery'] = "SELECT * FROM products WHERE deletado=0 ORDER BY id DESC";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -150,13 +155,20 @@
     
     <div class="bg">
         <div class="filter-container">
+            <div id="eraseFilterContainer">
+                <div onclick="eraseFilter();" id="eraseFilter">LIMPAR</div>
+            </div>
+            <div onclick="getProducts();" id="searchButtonContainer">
+                <div id="searchButton">BUSCAR</div>
+            </div>
             <div class="filter-option-container titulo">
                 <span>Título:</span>
-                <input type="text">
+                <input id="filterTitle" type="text">
             </div>
             <div class="filter-option-container">
                 <span>Departamento:</span>
                 <select name="departamento" id="filterDepartamento">
+                    <option value="">Qualquer</option>
                     <option value="Roupas">Roupas</option>
                     <option value="Calçados">Calçados</option>
                     <option value="Acessórios">Acessórios</option>
@@ -165,12 +177,15 @@
             <div class="filter-option-container">
                 <span>Tipo:</span>
                 <select name="tipo" id="filterTipo">
+                    <option value="">Qualquer</option>
+                    <option value="Regata">Regata</option>
                     
                 </select>
             </div>
             <div class="filter-option-container">
                 <span>Status:</span>
                 <select name="status" id="filterStatus">
+                    <option value="">Qualquer</option>
                     <option value="Disponível">Disponível</option>
                     <option value="Esgotado">Esgotado</option>
                     <option value="Rascunho">Rascunho</option>
@@ -230,4 +245,5 @@
 <script src="assets/js/fileReader.js"></script>
 <script src="assets/js/fileUpload.js"></script>
 <script src="assets/js/deleteProduct.js"></script>
+<script src="assets/js/eraseFilter.js"></script>
 </html>

@@ -1,6 +1,7 @@
 function getProducts(){
  var loadingBarContainer = document.getElementById("loadingBarContainer");
  loadingBarContainer.classList.add("show");
+ getFilterValue();
 
 fetch("scripts/getProducts.php")
     .then(function(response){
@@ -39,7 +40,11 @@ fetch("scripts/getProducts.php")
 
     .catch(error => {
         console.log(error);
-        alert('Falha na leitura dos produtos')
+        var loadingBarContainer = document.getElementById("loadingBarContainer");
+        loadingBarContainer.classList.remove("show");
+        var list = document.getElementById("list-body");
+        list.innerHTML = "";
+
     });
 
 
@@ -48,3 +53,72 @@ fetch("scripts/getProducts.php")
 getProducts();
 
 
+function getFilterValue(){
+    var filterTitle = document.getElementById("filterTitle").value;
+    var filterDepartamento = document.getElementById("filterDepartamento").value;
+    var filterTipo = document.getElementById("filterTipo").value;
+    var filterStatus = document.getElementById("filterStatus").value;
+
+    var filterTitleText = "";
+    var filterDepartamentoText = "";
+    var filterTipoText = "";
+    var filterStatusText = "";
+
+
+    if(filterTitle != ""){
+        filterTitleText = `titulo LIKE '%${filterTitle}%' AND `;
+    }
+   
+
+    if(filterDepartamento != ""){
+        
+        filterDepartamentoText = `departamento='${filterDepartamento}' AND `;
+        
+    }
+
+    if(filterTipo != ""){
+        
+        filterTipoText = `tipo='${filterTipo}' AND `;
+        
+    }
+
+    if(filterStatus != ""){
+        
+        filterStatusText = `status='${filterStatus}' AND `;
+        
+    }
+
+
+
+
+
+
+
+
+    var query = "SELECT * FROM products WHERE ";
+
+    var final = "deletado=0 ORDER BY id DESC"
+        
+   
+
+
+    query = query + filterTitleText + filterDepartamentoText + filterTipoText + filterStatusText + final;
+
+
+    console.log(query);
+
+
+    var data = {
+        "query" : query
+    }
+
+    fetch("scripts/setLastQuery.php", {method:"POST", headers: {'Content-type':'application/json'}, body: JSON.stringify(data)})
+        .then(function(response){
+            return response.json();
+        })
+
+        .then(function(response){
+            console.log(response);
+        })
+
+}

@@ -1,6 +1,6 @@
 <?php
+session_start();
 include("dbConnect.php");
-
 $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 // $data['query'] = "SELECT * FROM products WHERE id = 10 ORDER BY id";
@@ -12,7 +12,7 @@ if (isset($data['productId'])){
     $query = "SELECT * FROM products WHERE id='$productId' ORDER BY id DESC";
 }else{
 
-    $query = "SELECT * FROM products WHERE deletado=0 ORDER BY id DESC";
+    $query = $_SESSION['lastQuery'];
 }
 
 $response = $connect->query($query);
