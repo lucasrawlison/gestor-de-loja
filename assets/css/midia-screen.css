@@ -21,6 +21,10 @@
     position: relative;
     
     span{
+        align-items: end;
+        /* justify-content: center; */
+        height: 20px;
+        display: flex;
         font-size: 10px;
         width: 100%;
         padding-left: 10px;
@@ -29,9 +33,10 @@
         text-overflow: ellipsis;
         text-wrap: nowrap;
         position: absolute;
-        bottom: 4px;
+        bottom: 0;
         color: white;
         -webkit-text-stroke: 0.1px black;
+        background: linear-gradient(360deg, black, transparent);
     }
 }
 

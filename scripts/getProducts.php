@@ -22,7 +22,7 @@ if(isset($data['img'])){
     $products = $response->fetch_assoc();
     if($products['img'] == 1){
 
-        $imgQuery = "SELECT * FROM imagens WHERE bem_id='$products[id]'";
+        $imgQuery = "SELECT * FROM imagens WHERE bem_id='$products[id]' AND deletado=0";
         $imgResponse = $connect->query($imgQuery);
         $imgCont = 0;
         while($image = $imgResponse->fetch_assoc()){
