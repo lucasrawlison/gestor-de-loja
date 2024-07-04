@@ -47,3 +47,21 @@ function unsetFiles(){
     console.log(files);
 }
 
+
+function deleteTempImg(name, lastModified){
+    var i = 0;
+    files.forEach(file =>{
+        if(file.name == name && file.lastModified == lastModified){
+           var imgDiv = document.getElementById(`i_${file.name}_${file.lastModified}`);
+           console.log(`i_${file.name}_${file.lastModified}`);
+           var index = i;
+           files.splice(index, 1);
+
+           imgDiv.remove();
+
+        }
+        i++;
+    })
+    console.log(files);
+}
+

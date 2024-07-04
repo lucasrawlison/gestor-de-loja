@@ -22,9 +22,10 @@ function fileReader(){
             
             picturesDisplay.innerHTML += 
             `
-            <div class="pictures-container">
+            <div id="i_${file.name}_${file.lastModified}" class="pictures-container">
+            <span onclick="deleteTempImg('${file.name}', ${file.lastModified});" class="delete-image-bt">EXCLUIR</span>
             <img src="${e.target.result}" alt="image_${file.name}">
-            <span>${file.name}</span>
+            <span class="img-description">${file.name}</span>
             </div>
             <form id="fileForm" class="add-picture" action="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">

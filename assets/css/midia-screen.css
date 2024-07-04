@@ -20,26 +20,27 @@
     cursor: pointer;
     position: relative;
     
-    span{
-        align-items: end;
-        /* justify-content: center; */
-        height: 20px;
-        display: flex;
-        font-size: 10px;
-        width: 100%;
-        padding-left: 10px;
-        padding-right: 5px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-wrap: nowrap;
-        position: absolute;
-        bottom: 0;
-        color: white;
-        -webkit-text-stroke: 0.1px black;
-        background: linear-gradient(360deg, black, transparent);
-    }
+    
 }
 
+.img-description{
+    align-items: end;
+    /* justify-content: center; */
+    height: 20px;
+    display: flex;
+    font-size: 10px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    -webkit-text-stroke: 0.1px black;
+    background: linear-gradient(360deg, black, transparent);
+}
 .pictures-container:hover{
     border: 1px solid rgb(129, 129, 129);
 }   
@@ -125,3 +126,12 @@
     color: white;
 }
 
+.delete-image-bt{
+    position: absolute;
+    color: rgb(209, 0, 0);
+    right: 3px;
+    top: 2px;
+    font-size: 8px;
+    font-weight: bolder;
+    font-family: sans-serif;
+}
