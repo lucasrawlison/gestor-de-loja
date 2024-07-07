@@ -244,6 +244,7 @@ $_SESSION['lastQuery'] = "SELECT * FROM products WHERE deletado=0 ORDER BY id DE
 <script src="assets/js/productOptionSelect.js"></script>
 <script src="assets/js/fileReader.js"></script>
 <script src="assets/js/fileUpload.js"></script>
-<script src="assets/js/deleteProduct.js"></script>
 <script src="assets/js/eraseFilter.js"></script>
+<script src="assets/js/deleteProduct.js"></script>
+<script src="assets/js/deleteImg.js"></script>
 </html>

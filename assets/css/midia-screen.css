@@ -20,7 +20,6 @@
     cursor: pointer;
     position: relative;
     
-    
 }
 
 .img-description{
@@ -43,6 +42,15 @@
 }
 .pictures-container:hover{
     border: 1px solid rgb(129, 129, 129);
+
+    .delete-image-bt{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        /* padding-left: 0px; */
+        box-sizing: border-box;
+        padding-right: 5px;
+    }
 }   
 
 .add-picture{
@@ -129,9 +137,12 @@
 .delete-image-bt{
     position: absolute;
     color: rgb(209, 0, 0);
-    right: 3px;
-    top: 2px;
     font-size: 8px;
     font-weight: bolder;
     font-family: sans-serif;
+    display: none;
+    width: 100%;
+    background: linear-gradient(179deg, #000000c4, transparent);
+    height: 20px;
+    
 }

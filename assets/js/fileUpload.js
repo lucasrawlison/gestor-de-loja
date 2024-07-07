@@ -23,6 +23,9 @@ function fileUpload(){
         .then(function(data){
             console.log(data);
             unsetFiles();
+            if(fileSubmitContainer.classList.contains("show")){
+                fileSubmitContainer.classList.remove("show");
+            }
             loadProduct(productId);
         })
 
@@ -43,6 +46,10 @@ function fileAdd(file){
 }
 
 function unsetFiles(){
+    var fileSubmitContainer = document.getElementById("fileSubmitContainer");
+    if(fileSubmitContainer.classList.contains("show")){
+        fileSubmitContainer.classList.remove("show");
+    }
     files =  [];
     console.log(files);
 }
@@ -62,6 +69,7 @@ function deleteTempImg(name, lastModified){
         }
         i++;
     })
+    
     console.log(files);
 }
 

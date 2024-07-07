@@ -200,7 +200,8 @@ function loadProduct(productId){
                 product.image.forEach(image => {
                     picturesDisplay.innerHTML += 
                     `
-                    <div class="pictures-container">
+                    <div id="img_${image.id}_bem_${image.bem_id}" class="pictures-container">
+                    <span onclick="deleteImg(${image.id},${image.bem_id} );" class="delete-image-bt">EXCLUIR</span>
                     <img src="${image.path}" alt="image_${image.nome}">
                     </div>
                     `;
