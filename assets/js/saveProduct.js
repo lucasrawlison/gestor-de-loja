@@ -43,7 +43,7 @@ function saveProduct(id){
     }else{
 
     
-
+    var status = document.getElementById("productStatus").value;    
     var titulo = document.getElementById("productTitle").value;
     var departamento = document.getElementById("productDepartamento").value;
     var tipo = document.getElementById("productTipo").value;
@@ -52,6 +52,7 @@ function saveProduct(id){
     var productPreviousValue = convertValue(document.getElementById("productPreviousValue").value);
         
     data = {
+        "status" : status,
         "titulo" : titulo,
         "id" : id,
         "departamento" : departamento,

@@ -69,7 +69,18 @@ if (isset($data['productId'])){
     
     $products["types"] = $types;
 
+    $statsQuery = "SELECT * FROM status";
+    $statusReturn = $connect->query($statsQuery);
+    $statusCont = 0;
+    while($status = $statusReturn->fetch_assoc()){
+        $allStatus[$statusCont] = $status;
+        $statusCont++;
+    
+    }
+    
+    $products["allStatus"] = $allStatus;
 }
+
 
 
 echo json_encode($products);

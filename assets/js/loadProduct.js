@@ -139,6 +139,17 @@ function loadProduct(productId){
             `
             <option value="${product.status}">${product.status}</option>
             `;
+
+            product.allStatus.forEach(stats=> {
+                if(stats.titulo != product.status){
+                    productStatus.innerHTML += 
+                    `
+                    <option value="${stats.titulo}">${stats.titulo}</option>
+                    `;
+                }
+
+
+            })
             
             productSexo.innerHTML =
             `
